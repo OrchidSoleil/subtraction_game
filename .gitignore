@@ -1,0 +1,8 @@
+# created by virtualenv automatically
+.idea
+.idea/inspectionProfiles/
+.idea/misc.xml
+.idea/modules.xml
+.idea/subtraction_game.iml
+.idea/vcs.xml
+venv
