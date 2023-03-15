@@ -1,24 +1,23 @@
 import random
 
-game_on = True
 
-while game_on:
-    number1 = random.randint(20, 40)
-    number2 = random.randint(10, 30)
-    print("To quit press 100.")
+def intro():
+    print(f"Hello! Let's challenge your subtraction skills!\n")
+    print(f"Modes:\n1. Natural numbers.\n2. Negative numbers.\n3. Quit")
+    print(f"Choose mode and press Enter.")
 
-    try:
-        answer = int(input(f"{number1} - {number2} = "))
-        check = number1 - number2
-        if answer == 100:
-            print("Bye!")
-            game_on = False
-        elif answer == check:
-            print("Right!")
+    while True:
+        mode = input()
+        if mode == '1':
+            return natural_numbers()
+        elif mode == '2':
+            return rational_numbers()
+        elif mode == '3':
+            print('Bye!')
+            break
         else:
-            print("Wrong!")
-    except ValueError:
-        print("Please use numbers!")
+            print('Please try again!')
+            continue
 
 
 def natural_numbers():
@@ -73,3 +72,6 @@ def rational_numbers():
                 print("Wrong!")
         except ValueError:
             print("Please type numbers!")
+
+
+intro()
