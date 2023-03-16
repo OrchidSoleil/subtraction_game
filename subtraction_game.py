@@ -20,6 +20,11 @@ def intro():
             continue
 
 
+def score(right_points, wrong_points):
+    print(f"Your Score:\n  Correct answers: {right_points}\n"
+          f"  Wrong answers: {wrong_points}")
+
+
 def natural_numbers():
     print("Natural Numbers subtraction.\nTo quit type 100.")
     game_on = True
@@ -36,7 +41,7 @@ def natural_numbers():
             if answer == 100:
                 print("Bye!")
                 game_on = False
-                # score(counter_rights, counter_wrongs)
+                score(counter_rights, counter_wrongs)
             elif answer == check:
                 counter_rights += 1
                 print("Right!")
@@ -62,7 +67,7 @@ def rational_numbers():
 
             if answer == 100:
                 print("Bye!")
-                # score(counter_rights, counter_wrongs)
+                score(counter_rights, counter_wrongs)
                 game_on = False
             elif answer == check:
                 counter_rights += 1
