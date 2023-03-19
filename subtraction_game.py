@@ -22,15 +22,21 @@ def intro():
             continue
 
 
-def score(right_points, wrong_points):
-    print(f"Your Score:\n  Correct answers: {right_points}\n"
+def score(right_points, wrong_points, correct_answers):
+    print(f"-----------\nYour Score:\n  Correct answers: {right_points}\n"
           f"  Wrong answers: {wrong_points}")
+    for i in 'Correct answers:':
+        print('-', end='')
+    print("\nCorrect answers:")
+    for answer in correct_answers:
+        print(answer)
 
 
 def subtraction(mode):
     game_on = True
     counter_rights = 0
     counter_wrongs = 0
+    correct_answers = []
 
     while game_on:
         number1 = random.randint(20, 40)
@@ -41,13 +47,15 @@ def subtraction(mode):
 
             if answer == 100:
                 print("Bye!")
+                # print(correct_answers)
                 game_on = False
-                score(counter_rights, counter_wrongs)
+                score(counter_rights, counter_wrongs, correct_answers)
             elif answer == check:
                 counter_rights += 1
                 print("Right!")
             else:
                 counter_wrongs += 1
+                correct_answers.append(f"{number1} - {number2} = {check}")
                 print("Wrong!")
         except ValueError:
             print("Please type numbers!")
