@@ -58,7 +58,7 @@ def subtraction(mode):
                 correct_answers.append(f"{number1} - {number2} = {check}")
                 print("Wrong!")
         except ValueError:
-            print("Please type numbers!")
+            print("Please type numerical digits!")
 
 
 intro()
